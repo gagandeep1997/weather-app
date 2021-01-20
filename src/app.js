@@ -4,6 +4,7 @@ const app = express()
 const hbs = require('hbs')
 const geocode = require('./utiles/geocode')
 const forecast = require('./utiles/forecast')
+const port = process.env.PORT || 3000
 
 
 const dirname=path.join(__dirname,'../src')
@@ -47,6 +48,6 @@ app.get('/help',(req,res) => {
     res.render('help')
 })
 
-app.listen(3000,() => {
+app.listen(port,() => {
     console.log('server is running')
 })
