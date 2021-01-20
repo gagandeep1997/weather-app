@@ -11,6 +11,7 @@ const dirname=path.join(__dirname,'../src')
 app.set('view engine','hbs')
 hbs.registerPartials('partials')
 app.use(express.static(dirname))
+app.set('views', path.join(__dirname, 'views'));
 
 app.get('/weather',(req,res) => {
     if(!req.query.search)
